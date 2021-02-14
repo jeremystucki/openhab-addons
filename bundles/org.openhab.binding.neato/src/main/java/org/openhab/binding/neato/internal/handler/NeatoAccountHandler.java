@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2020 Contributors to the openHAB project
+ * Copyright (c) 2010-2021 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -55,6 +55,11 @@ public class NeatoAccountHandler extends BaseBridgeHandler {
 
     @Override
     public void handleCommand(ChannelUID channelUID, Command command) {
+    }
+
+    @Override
+    public void initialize() {
+        updateStatus(ThingStatus.ONLINE);
     }
 
     private List<Robot> sendGetRobots(String accessToken) {
